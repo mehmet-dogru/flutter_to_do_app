@@ -4,7 +4,7 @@ import 'package:flutter_to_do_app/ui/helpers/colors.dart';
 
 class TaskTile extends StatelessWidget {
   final Task? task;
-  TaskTile(this.task);
+  const TaskTile(this.task, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -12,18 +12,19 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  TaskController _taskController = TaskController();
+  final TaskController _taskController = TaskController();
   DateTime _selectedDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
+    _taskController.getTasks();
     return Scaffold(
       backgroundColor: context.theme.backgroundColor,
       appBar: _appBar(),
@@ -157,7 +158,7 @@ class _HomePageState extends State<HomePage> {
           MyButton(
             label: '+ Add Task',
             onTap: () async {
-              await Get.to(AddTaskPage());
+              await Get.to(const AddTaskPage());
               _taskController.getTasks();
             },
           ),

@@ -16,8 +16,8 @@ class AddTaskPage extends StatefulWidget {
 
 class _AddTaskPageState extends State<AddTaskPage> {
   final TaskController _taskController = Get.put(TaskController());
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _noteController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _noteController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30 AM";
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
